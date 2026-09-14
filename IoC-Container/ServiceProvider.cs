@@ -28,6 +28,7 @@ namespace IoC_Container
         }
         private object Get(Type type)
         {
+            List<ServiceDescriptor> serviceItems = KeyValuePairs[type];
             ServiceDescriptor serviceItem = serviceItems.LastOrDefault();
             return GetInstance(serviceItem, type);
         }
